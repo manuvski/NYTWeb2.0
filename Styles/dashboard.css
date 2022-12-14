@@ -1,0 +1,10 @@
+/* estilo body */
+body{
+width: 100vw;
+height: auto;
+}
+
+/* estilo container */
+#container{
+    width:100%;
+}
