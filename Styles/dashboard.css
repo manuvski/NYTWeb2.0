@@ -1,6 +1,5 @@
 /* estilo body */
 body{
-    background-color: black;
 width: 100vw;
 height: 100vh;
 }
@@ -9,14 +8,99 @@ height: 100vh;
 
 /* estilo container */
 #container{
-    width:100%;
+    width: 100%;
     height: 100%;
 }
 
-h1{
-   color: rgb(20, 82, 82);
+/* estilo del titulo */
 
+#title{
+    line-height: 100%;
 }
+
+h2{
+    margin-top: 1em;
+    margin-bottom: .8em;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 3em;
+    padding: .1em;
+    padding-left: .8em;
+    background-color: black;
+    color: white;
+    width: 5em;
+}
+
+/* estilos de las cards */
+
+#content{
+    display: grid;  
+    grid-template-columns:1fr 1fr;
+}
+
+#card{
+    border: 1px solid grey;
+    box-shadow: 1px 1px 1px grey;
+    height: 8em;
+    width: 8em;
+    margin: .8em;
+    padding: .5em;
+}
+
+h4{
+    font-weight: bold;
+}
+
+hr{
+   
+    color: black;
+    border-color: bla;
+ }
+
+#infoCard{
+    margin-bottom: 1em;
+    font-size: .8em;
+    padding: .3em;
+}
+
+a{
+    color: black;
+    font-size: small;
+    border: 1px solid grey;
+    text-decoration: none;
+    box-shadow: 2px 2px 2px grey;
+    padding: .1em;
+}
+
+    /* Diseño para tablets */
+
+@media (min-width: 600px){
+    #content{
+        grid-template-columns:1fr 1fr 1fr;
+    }
+    
+    h1{
+        padding-left: 3em;
+        width: 5.5em;
+    }
+    
+  
+}
+
+@media (min-width: 1024){
+    #content{
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    }
+    
+  
+}
+
+
+
 
 
 
