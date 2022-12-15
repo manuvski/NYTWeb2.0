@@ -2,8 +2,10 @@
 body{
     background-color: black;
 width: 100vw;
-height: auto;
+height: 100vh;
 }
+
+/* DASHBOARD STYLE */
 
 /* estilo container */
 #container{
@@ -13,5 +15,63 @@ height: auto;
 
 h1{
    color: rgb(20, 82, 82);
+
+}
+
+
+
+
+
+/* DETAIL CARD STYLE */
+#container2{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#imgDetail, #textDetail{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* #textDetail{
+
+} */
+
+.detail{
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -2.5px black;
+    padding: 10%;
+    background: white;
+}
+
+.detail:hover{
+    transform: scale(1.02);
+    background: black;
+    color: white;
+    transition: .5s all ease-in-out;
+}
+
+.detail:not(:hover){
+    transform: scale(1);
+    background: white;
+    color: black;
+    transition: .5s all ease-in-out;
+}
+
+#titleDetail{
+    position: absolute;
+    color: white;
+}
+
+img{
+    width: 350px;
 }
 
