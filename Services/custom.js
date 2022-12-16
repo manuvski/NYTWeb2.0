@@ -27,10 +27,14 @@ async function startApp() {
     const booksData = await getData()
 
 booksData.forEach(result => {
-   
+    let aux = 0;    
     const ourData = {name: result.list_name, old: result.oldest_published_date,new: result.newest_published_date, update: result.updated}
+    
+    const cardELEM = document.querySelectorAll("#card");
+    const h4ELEM = cardELEM[aux].querySelector("h4");
+        h4ELEM.innerHTML = ourData.name;
 
-    console.log(ourData)
+        aux++
 });
 }
 
