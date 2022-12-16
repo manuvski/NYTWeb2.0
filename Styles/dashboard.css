@@ -16,6 +16,7 @@ height: 100vh;
 
 #title{
     line-height: 100%;
+    padding-left: 10px;
 }
 
 h2{
@@ -25,6 +26,10 @@ h2{
     font-weight: bold;
 }
 
+i{
+    font-size: .5em;
+    
+}
 
 h1{
     font-weight: bold;
@@ -108,10 +113,14 @@ a:hover{
   
 }
 
-@media (min-width: 1024){
+@media (min-width: 1024px){
     #content{
         grid-template-columns:1fr 1fr 1fr 1fr;
     }
+
+    
+
+
     
   
 }
