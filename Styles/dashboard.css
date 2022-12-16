@@ -25,6 +25,10 @@ h2{
     font-weight: bold;
 }
 
+i{
+    
+}
+
 h1{
     font-weight: bold;
     font-size: 3em;
@@ -40,15 +44,26 @@ h1{
 #content{
     display: grid;  
     grid-template-columns:1fr 1fr;
+    justify-content: center;
+    align-items: center;
 }
 
 #card{
+    border-radius: 15px;
     border: 1px solid grey;
     box-shadow: 1px 1px 1px grey;
     height: 8em;
     width: 8em;
     margin: .8em;
     padding: .5em;
+    display: ;
+}
+
+#card:hover{
+    transform: scale(1.1);
+    background: rgb(220, 218, 218) ;
+    color: black;
+    transition: .5s all ease-in-out;
 }
 
 h4{
@@ -58,7 +73,8 @@ h4{
 hr{
    
     color: black;
-    border-color: bla;
+    border-color: black;
+    background-color: black;
  }
 
 #infoCard{
@@ -72,8 +88,14 @@ a{
     font-size: small;
     border: 1px solid grey;
     text-decoration: none;
-    box-shadow: 2px 2px 2px grey;
-    padding: .1em;
+    box-shadow: 2px 2px 2px rgb(215, 209, 209);
+    padding: .3em;
+    border-radius: 10px;
+}
+
+a:hover{
+    background-color: black;
+    color: rgb(220, 218, 218);
 }
 
     /* Diseño para tablets */
