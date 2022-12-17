@@ -27,14 +27,36 @@ async function startApp() {
     const booksData = await getData()
 
 booksData.forEach(result => {
-    let aux = 0;    
+   
     const ourData = {name: result.list_name, old: result.oldest_published_date,new: result.newest_published_date, update: result.updated}
-    
-    const cardELEM = document.querySelectorAll("#card");
-    const h4ELEM = cardELEM[aux].querySelector("h4");
-        h4ELEM.innerHTML = ourData.name;
 
-        aux++
+
+    const cardELEM = document.createElement("div")
+    cardELEM.setAttribute("id","card");
+    const h4ELEM = document.createElement("h4")
+    h4ELEM.innerHTML = ourData.name
+
+    const divINFO = document.createElement("div")
+    divINFO.setAttribute("id","infoCard")
+    for (let i = 0; i < 3; i++) {
+        const pELEM = document.createElement("p") 
+        pELEM.innerHTML = i === 0 ?
+        ourData.old : i === 1 ?
+        ourData.new : i === 2 ?
+        ourData.update : "";
+        divINFO.append(pELEM);
+    }
+
+    const linkELEM = document.createElement("a");
+    linkELEM.innerHTML = "READ MORE ▶"
+
+    cardELEM.append(h4ELEM)
+    cardELEM.append(divINFO)
+    cardELEM.append(linkELEM)
+    const contentELEM = document.getElementById("content")
+    contentELEM.append(cardELEM)
+   
+        
 });
 }
 
