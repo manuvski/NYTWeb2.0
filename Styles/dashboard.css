@@ -2,6 +2,7 @@
 body{
 width: 100vw;
 height: 100vh;
+overflow-x: hidden;
 }
 
 /* DASHBOARD STYLE */
@@ -66,8 +67,21 @@ h1{
     transition: .5s all ease-in-out;
 }
 
+#card:not(:hover){
+    transform: scale(1);
+    transition: .5s all ease-in-out;
+}
+
 h4{
     font-weight: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.765);
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+    height: 30%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 hr{
@@ -96,6 +110,10 @@ a{
 a:hover{
     background-color: black;
     color: rgb(220, 218, 218);
+}
+
+a:not(:hover){
+    transition: .5s all ease-in-out;
 }
 
     /* Diseño para tablets */
@@ -185,3 +203,28 @@ img{
     width: 350px;
 }
 
+
+
+
+
+
+/* SCROLLBAR STYLES */
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(0, 0, 0);
+    border-radius: 50px;
+  }
