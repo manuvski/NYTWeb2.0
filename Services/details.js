@@ -28,8 +28,37 @@ async function startApp() {
 booksData.forEach(result => {
    
     const ourData = {name: result.title, url: result.book_image, onList: result.weeks_on_list, description: result.description}
-    
+
     console.log(ourData)
+
+
+
+    const bookName = document.createElement('div')
+    bookName.setAttribute('class','detailName')
+    bookName.innerHTML= ourData.name
+
+    const bookUrl = document.createElement('img')
+    bookUrl.setAttribute('class','detailUrl')
+    bookUrl.setAttribute('src', ourData.url)
+
+    const bookLista = document.createElement('p')
+    bookLista.setAttribute('class','detailLista')
+    bookLista.innerHTML= ourData.onList
+
+    const bookDescription = document.createElement('p')
+    bookDescription.setAttribute('class','detailDescription')
+    bookDescription.innerHTML= ourData.description
+
+    const sonDetail = document.createElement('div')
+    sonDetail.setAttribute('class', 'detail')
+    sonDetail.append(bookName)
+    sonDetail.append(bookUrl)
+    sonDetail.append(bookLista)
+    sonDetail.append(bookDescription)
+    console.log(ourData.bookName)
+    const detail = document.getElementById('textDetail')
+    detail.append(sonDetail)
+
    
 });
  }
