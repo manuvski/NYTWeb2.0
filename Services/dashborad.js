@@ -14,13 +14,14 @@ async function getData () {
             localStorage.setItem(localStorageKey, JSON.stringify(results))
             list = results
         }
+        bool = true
     }
     catch (error) {
         console.log('Hubo un error')
     }
+    
 }
-
-    return list
+return list
 }
 
 async function startApp() {
@@ -49,15 +50,21 @@ booksData.forEach(result => {
 
     const linkELEM = document.createElement("a");
     linkELEM.innerHTML = "READ MORE ▶"
-
+    linkELEM.setAttribute('href', './details.html')
     cardELEM.append(h4ELEM)
     cardELEM.append(divINFO)
     cardELEM.append(linkELEM)
     const contentELEM = document.getElementById("content")
     contentELEM.append(cardELEM)
    
-        
+    
+    linkELEM.onclick = () => {
+        localStorage.setItem("bookGenre", h4ELEM.textContent)
+       
+    }
+
 });
 }
 
 startApp()  
+
