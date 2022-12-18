@@ -1,7 +1,7 @@
 /* estilo body */
 body{
 width: 100vw;
-height: 100vh;
+height: auto;
 overflow-x: hidden;
 }
 
@@ -23,7 +23,7 @@ overflow-x: hidden;
 h2{
     margin-top: 1em;
     margin-bottom: .8em;
-    font-size: 1em;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
@@ -34,8 +34,8 @@ i{
 
 h1{
     font-weight: bold;
-    font-size: 3em;
-    padding: .1em;
+    font-size: 5em;
+    padding: .2em;
     padding-left: .8em;
     background-color: black;
     color: white;
@@ -119,30 +119,7 @@ a:not(:hover){
 
     /* Diseño para tablets */
 
-@media (min-width: 600px){
-    #content{
-        grid-template-columns:1fr 1fr 1fr;
-    }
-    
-    h1{
-        padding-left: 3em;
-        width: 5.5em;
-    }
-    
-  
-}
 
-@media (min-width: 1024px){
-    #content{
-        grid-template-columns:1fr 1fr 1fr 1fr;
-    }
-
-    
-
-
-    
-  
-}
 
 
 
@@ -158,33 +135,48 @@ a:not(:hover){
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    margin-top: 10%;
 }
 
-#imgDetail, #textDetail{
+#imgDetail{
     
     width:100%;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
 }
+#textDetail{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
 
 /* #textDetail{
 
 } */
 
 .detail{
-    
+    width: 80%;
+    height: 30em;
     border-radius: 5px;
     box-shadow: 0px 0px 10px -2.5px black;
-    padding: 10%;
+    padding: 5% 0;
     background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10%;
+    text-align: center;
 }
 
 .detail:hover{
-    transform: scale(1.02);
+    transform: scale(1.04);
     background: black;
     color: white;
     transition: .5s all ease-in-out;
@@ -197,19 +189,76 @@ a:not(:hover){
     transition: .5s all ease-in-out;
 }
 
-#titleDetail{
-    position: absolute;
-    color: white;
-}
-
 img{
-    width: 350px;
+    width: 70%;
+}
+
+
+.greyBook{
+    color: rgb(77, 77, 77);
+}
+
+
+#back{
+    text-align: center;
+    margin: 2.5%;
+    margin-left: 1.5%;
+    width: 7.5%;
+    padding: .5%;
+    color: white;
+    background: rgba(255, 0, 0, 0.902);
+    border-color: #f1f1f100;
+    border-radius: 0;
+    font-size: 1em;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 600px){    
+    #back{
+        width: 20%;
+    }
+  
+}
+
+@media (min-width: 600px){
+    #content{
+        grid-template-columns:1fr 1fr 1fr;
+    }
 }
 
 
 
+@media (min-width: 890px){
+    #container2{
+        margin-top: 5%;
+    }
+    #textDetail{
+        grid-template-columns: 1fr 1fr 1fr;
+        
+    }
+    
+}
+@media (min-width: 1024px){
+    #textDetail{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        
+    }
 
-
+    #content{
+        grid-template-columns:1fr 1fr 1fr 1fr;
+    }
+}
+@media (min-width: 1400px){
+    #container2{
+        margin-top: 2%;
+    }
+    #textDetail{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        
+    }
+}
 
 /* SCROLLBAR STYLES */
 
