@@ -107,6 +107,7 @@ a{
     border-radius: 10px;
 }
 
+
 a:hover{
     background-color: black;
     color: rgb(220, 218, 218);
@@ -116,16 +117,6 @@ a:hover{
 a:not(:hover){
     transition: .5s all ease-in-out;
 }
-
-    /* Diseño para tablets */
-
-
-
-
-
-
-
-
 
 
 /* DETAIL CARD STYLE */
@@ -249,6 +240,27 @@ img{
     #content{
         grid-template-columns:1fr 1fr 1fr 1fr;
     }
+
+    #card{
+        height: 18em;
+        width: 18em;
+    }
+    
+    h4{
+        font-size: 1.8em;
+    }
+
+    #infoCard{
+        margin-bottom: 2em;
+        font-size: 1.2em;
+        padding: .5em;
+        line-height: 120%;
+    }
+    
+    a{
+        font-size: 1.5em;
+    }
+
 }
 @media (min-width: 1400px){
     #container2{
@@ -279,4 +291,43 @@ img{
   ::-webkit-scrollbar-thumb {
     background: rgb(0, 0, 0);
     border-radius: 50px;
+  }
+
+
+  /* estilos details */
+
+  .detailName{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    padding-bottom: .5em; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detailUrl{
+    width: 8em;
+    height: 12em;
+     margin-bottom: 4em;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-bottom: 20px;
+  }
+
+  p{
+    font-family: Roboto;
+  }
+
+  .detailLista{
+    margin-bottom: 20px;
+    font-style: oblique;
+  }
+
+  .detailDescription{
+    display: flex;
+    align-items:flex-start;
+    justify-content:center;
   }
