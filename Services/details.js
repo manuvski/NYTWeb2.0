@@ -43,7 +43,7 @@ booksData.forEach(result => {
 
     const bookLista = document.createElement('p')
     bookLista.setAttribute('class','detailLista greyBook')
-    bookLista.innerHTML= ourData.onList
+    bookLista.innerHTML= 'Weeks on list: ' + ourData.onList
 
     const bookDescription = document.createElement('p')
     bookDescription.setAttribute('class','detailDescription greyBook')
