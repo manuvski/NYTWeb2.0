@@ -47,7 +47,13 @@ booksData.forEach(result => {
 
     const bookDescription = document.createElement('p')
     bookDescription.setAttribute('class','detailDescription greyBook')
-    bookDescription.innerHTML= ourData.description
+
+    if(ourData.description === ""){
+        bookDescription.innerHTML= "Descripción no disponible..."
+    }else{
+        bookDescription.innerHTML= ourData.description
+    }
+    
 
     const sonDetail = document.createElement('div')
     sonDetail.setAttribute('class', 'detail')
