@@ -42,11 +42,11 @@ booksData.forEach(result => {
     bookUrl.setAttribute('src', ourData.url)
 
     const bookLista = document.createElement('p')
-    bookLista.setAttribute('class','detailLista')
+    bookLista.setAttribute('class','detailLista greyBook')
     bookLista.innerHTML= ourData.onList
 
     const bookDescription = document.createElement('p')
-    bookDescription.setAttribute('class','detailDescription')
+    bookDescription.setAttribute('class','detailDescription greyBook')
     bookDescription.innerHTML= ourData.description
 
     const sonDetail = document.createElement('div')
@@ -61,7 +61,13 @@ booksData.forEach(result => {
 
    
 });
+
+        const titleELEM = document.getElementById("title")
+        const bookType = document.createElement("h2")
+        bookType.setAttribute("class","greyBook")
+        bookType.innerHTML = localStorage.getItem(localStorageKey)
+
+        titleELEM.append(bookType)
  }
 
 startApp()  
-
