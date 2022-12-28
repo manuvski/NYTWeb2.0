@@ -108,6 +108,14 @@ a{
     border-radius: 10px;
 }
 
+.detail a{
+    font-size: 1em;
+    margin-top: 1em;
+    width: 8rem;
+    height: 1.5rem;
+    background-color: #ffa41c;
+
+}
 
 a:hover{
     background-color: black;
@@ -154,10 +162,9 @@ a:not(:hover){
 
 .detail{
     width: 80%;
-    height: 30em;
+    height: 33em;
     border-radius: 5px;
     box-shadow: 0px 0px 10px -2.5px black;
-    padding: 5% 0;
     background: white;
     display: flex;
     flex-direction: column;
@@ -181,15 +188,18 @@ a:not(:hover){
     transition: .5s all ease-in-out;
 }
 
+.detailDescription:hover,
+.detailLista:hover {
+    color: white;
+}
+
 img{
     width: 70%;
 }
 
-
 .greyBook{
     color: rgb(77, 77, 77);
 }
-
 
 #back{
     text-align: center;
@@ -207,22 +217,22 @@ img{
 .detailName{
     font-size: 1.5em;
     font-weight: bold;
-    margin-bottom: 2em;
-    margin-top: 1em;
-    padding-bottom: .5em; 
+    height: 2rem;
+    margin: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: top;
     align-items: center;
   }
 
   .detailUrl{
     width: 8em;
-    height: 12em;
-     margin-bottom: 4em;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     margin-bottom: 20px;
+    height: 10em;
+    margin-top: 0;
+    margin-bottom: 4em;
+    display: flex;
+    align-items: center;
+    justify-content: top;
+    margin-bottom: 20px;
   }
 
   p{
@@ -240,6 +250,20 @@ img{
     justify-content:center;
   }
 
+  .detailButton{
+    margin-top: 1em;
+    width: 8rem;
+    height: 2rem;
+    background-color: orange;
+    align-self: center;
+    justify-items: bottom;
+  }
+
+  .detailButton:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    border-color: white;
+}
 
 /* MEDIA QUERIES */
 

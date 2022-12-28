@@ -1,4 +1,5 @@
 "use strict"
+// import '../Services/firebase.js'
 const localStorageKey = "bookList";
 
 async function getData () {
@@ -19,7 +20,6 @@ async function getData () {
     catch (error) {
         console.log('Hubo un error')
     }
-    
 }
 return list
 }
@@ -31,7 +31,8 @@ booksData.forEach(result => {
    
     const ourData = {name: result.list_name, old: result.oldest_published_date,new: result.newest_published_date, update: result.updated}
 
-
+    
+    console.log(ourData.url)
     const cardELEM = document.createElement("div")
     cardELEM.setAttribute("id","card");
     const h4ELEM = document.createElement("h4")
@@ -41,12 +42,17 @@ booksData.forEach(result => {
     divINFO.setAttribute("id","infoCard")
     for (let i = 0; i < 3; i++) {
         const pELEM = document.createElement("p") 
-        pELEM.innerHTML = i === 0 ?
-        ourData.old : i === 1 ?
-        ourData.new : i === 2 ?
-        ourData.update : "";
+        if (i === 0) {
+            pELEM.innerHTML = ourData.old
+        } else if (i === 1) {
+            pELEM.innerHTML = ourData.new
+        } else if (i === 2) {
+            pELEM.innerHTML = ourData.update;
+        }
         divINFO.append(pELEM);
     }
+
+   
 
     const linkELEM = document.createElement("a");
     linkELEM.innerHTML = "READ MORE ▶"
