@@ -26,6 +26,7 @@ h2{
     margin-bottom: .8em;
     font-size: 2.5em;
     font-weight: bold;
+    color: rgb(10, 10, 10)
 }
 
 i{
@@ -39,7 +40,7 @@ h1{
     padding: .2em;
     padding-left: .8em;
     background-color: black;
-    color: white;
+    color: rgb(249, 246, 246);
     width: 5em;
 }
 
@@ -99,7 +100,7 @@ hr{
 }
 
 a{
-    color: black;
+    color: rgb(3, 3, 3);
     font-size: small;
     border: 1px solid grey;
     text-decoration: none;
@@ -114,12 +115,17 @@ a{
     width: 8rem;
     height: 1.5rem;
     background-color: #ffa41c;
-
 }
 
+.amazonLink:hover{
+    background-color: #ffa41c;
+    color: white;
+}   
+
 a:hover{
+    color: white;
     background-color: black;
-    color: rgb(220, 218, 218);
+    color: rgb(5, 5, 5);
     cursor: pointer;
 }
 
@@ -259,12 +265,6 @@ img{
     justify-items: bottom;
   }
 
-  .detailButton:hover{
-    cursor: pointer;
-    text-decoration: underline;
-    border-color: white;
-}
-
 /* MEDIA QUERIES */
 
 @media (max-width: 600px){    
@@ -386,7 +386,71 @@ img{
     border-radius: 50px;
   }
 
+  h1{
+    font-size: 3rem;
+    margin:5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-  /* estilos details */
+ li a,
+nav a{
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+    
+}
 
-  
+#nav-title{
+    color: white;
+}
+
+#logout{
+    color:white;
+    margin-right: 1em;
+    padding-right: .5em;
+}
+
+nav{
+    background-color: black;
+    height: 4rem;
+}
+
+.container{
+    display: flex;
+    justify-content:space-between;   
+}
+
+.brand{
+    margin-left: 10px;
+    font-size: 2.5rem;
+}
+
+.spinner {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .spinner:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: spinner 1.2s linear infinite;
+  }
+  @keyframes spinner {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .hidden{
+    display: none;
+  }

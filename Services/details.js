@@ -1,4 +1,7 @@
 "use strict"
+import '../Services/firebase.js'
+import { auth } from '../Services/firebase.js'
+import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 
 const localStorageKey = "bookGenre";
 
@@ -39,6 +42,7 @@ booksData.forEach(result => {
     bookDescription.setAttribute('class','detailDescription')
     
     const bookButton = document.createElement("a");
+    bookButton.setAttribute('class', 'amazonLink')
     bookButton.innerHTML = 'Buy at Amazon'
     bookButton.setAttribute('target', '_blank')
     bookButton.setAttribute('href',`${ourData.urlBuy}`)
@@ -75,3 +79,13 @@ booksData.forEach(result => {
  }
 
 startApp()  
+
+//Logout
+const logoutButon = document.querySelector('#logout')
+
+logoutButon.addEventListener('click', async () => {
+  await signOut(auth)
+  window.location.href = 'http://localhost:5500/index.html'
+
+
+})

@@ -1,12 +1,13 @@
 import './firebase.js'  
 
-import {auth} from './firebase.js'  
+import { auth } from './firebase.js'  
 import { onAuthStateChanged   } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 import { signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 import { signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
-
+import { FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
+import { GithubAuthProvider } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 
 
 //Metodo para el registro
@@ -25,7 +26,7 @@ try {
     const modal = bootstrap.Modal.getInstance(signupModal)
     modal.hide()
     window.location.href = '../Views/dashboard.html'
-
+    
 } catch (error) {
        if (error.code === 'auth/weak-password') {
         alert('Contraseña demasiado débil')
@@ -44,33 +45,31 @@ const logoutButon = document.querySelector('#logout')
 
 logoutButon.addEventListener('click', async () => {
    await signOut(auth)
-
 })
+
+
 const loginButon =  document.querySelectorAll('#login')
 const logoutButon2 = document.querySelectorAll('#logout')
-const emailInfo = document.querySelectorAll('.emailinfo')
-
+const emailInfo = document.querySelectorAll('#emailInfo')
 
 //Metodo para comprobar si hay sesion
 onAuthStateChanged(auth, async (user) => {
     if (user){
         loginButon.forEach(link => link.style.display = 'none')
-        logoutButon2.forEach(link => link.style.display = 'flex')
-        const email = signupForm['signup-email'].value
+        logoutButon2.forEach(link => link.style.display = 'inherit')
+        const email = user.email
         console.log(email)
-        const emailInfo = document.createElement('a')
-        emailInfo.setAttribute('class', 'emailinfo')
+        const emailInfo = document.querySelector('#emailInfo')
         emailInfo.innerHTML = email
-        const logoutNav = document.getElementById('logOutNav')
-        logoutNav.append(emailInfo)
-        // window.location.href = '../Views/dashboard.html'
+        window.location.href = '../Views/dashboard.html'
         
    
 
     } else {
-        loginButon.forEach(link => link.style.display = 'flex')
+        loginButon.forEach(link => link.style.display = 'inherit')
         logoutButon2.forEach(link => link.style.display = 'none')
         emailInfo.forEach(link => link.style.display = 'none')
+        emailInfo.innerHTML = ''
     }
 })
 
@@ -106,26 +105,57 @@ try {
 
 //Metodo para el inicio de sesion con Google
 const provider = new GoogleAuthProvider();
-provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-const googlebutton = document.querySelector('#googleButton')
-
+const googlebutton = document.querySelector('#googleSigninButton')
+const googlelogin = document.getElementById('signinModal')
 googlebutton.addEventListener('click', async (e) =>{
 e.preventDefault()
+
 try {
  const credentials = await signInWithPopup(auth, provider)
     console.log(credentials)
-    const modal = bootstrap.Modal.getInstance(document.querySelector('#googleButton'))
+    const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'))
     modal.hide()
 
 } catch (error) {
     console.log(error)
 }
-
-
-
 })
 
 
+//Metodo para el inicio de sesion con Facebook
+const facebookProvider = new FacebookAuthProvider();
+const facebookbutton = document.querySelector('#facebookSigninButton')
+
+facebookbutton.addEventListener('click', async (e) =>{
+e.preventDefault()
+try {
+ const credentials = await signInWithPopup(auth, facebookProvider)
+    console.log(credentials)
+    const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'))
+    modal.hide()
+
+} catch (error) {
+    console.log(error)
+}
+})
+
+//Metodo para el inicio de sesion con Github
+
+const githubProvider = new GithubAuthProvider();
+const githubbutton = document.querySelector('#githubSigninButton')
+
+githubbutton.addEventListener('click', async (e) =>{
+e.preventDefault()
+try {
+ const credentials = await signInWithPopup(auth, githubProvider)
+    console.log(credentials)
+    const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'))
+    modal.hide()
+
+} catch (error) {
+    console.log(error)
+}
+})
 
 
 

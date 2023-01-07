@@ -35,7 +35,6 @@ section .loader .dot{
     background: black;
     box-shadow: 0px 0px 25px 0px red;
     margin: 20px 10px;
-    /* transform: scale(0.1); */
     border-radius: 50%;
     
 
@@ -118,4 +117,24 @@ section .loader .dot{
     section .loader{
         flex-direction: column;
     }
+}
+
+.nav-sections{
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+
+}
+
+.nav-sections a {
+    margin-right:16px;
+}
+
+.hidden{
+    display:none;
+}
+
+.emailInfo{
+    background-color: white;
+    color: white;
 }

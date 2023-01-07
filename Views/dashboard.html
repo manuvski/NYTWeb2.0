@@ -9,9 +9,26 @@
     <link rel="stylesheet" href="../Styles/reset.css">
     <link rel="stylesheet" href="../Styles/dashboard.css">
     <script defer src="../Services/dashborad.js" type="module"></script>
-    <script defer src="../Services/details.js"></script>
 </head>
 <body>
+    <nav class="menu">
+
+        <div class="container">
+            <a class="brand" id="nav-title" href="./dashboard.html">New York Times Book Web</a>
+        <ul>
+            <div id="buttons">
+
+            <li class="nav-item" id="logOutNav">
+                <a class="nav-link3" href="#" id="logout">LogOut</a>
+            </li>
+            
+        </div>
+        </ul>
+    </div>
+    </nav>
+
+
+
     <div id="container">
 
         <div id="title">
@@ -20,7 +37,12 @@
         </div>
         <hr>
 
-        <div id="content">
+        <div class="spinner" id="spinner">
+
+
+        </div>
+
+        <div id="content" class="hidden">
             
         </div>
 

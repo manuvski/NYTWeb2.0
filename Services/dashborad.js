@@ -1,6 +1,12 @@
 "use strict"
-// import '../Services/firebase.js'
+import '../Services/firebase.js'
+import { auth } from '../Services/firebase.js'
+import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
+
+
 const localStorageKey = "bookList";
+const spinnerElement = document.getElementById('spinner')
+const contentElement = document.getElementById('content')
 
 async function getData () {
     const localStorageBooks = localStorage.getItem(localStorageKey);
@@ -16,11 +22,16 @@ async function getData () {
             list = results
         }
         bool = true
+        
     }
     catch (error) {
         console.log('Hubo un error')
+
     }
 }
+spinnerElement.setAttribute('class', 'hidden')
+contentElement.removeAttribute('class', 'hidden')
+
 return list
 }
 
@@ -74,3 +85,13 @@ booksData.forEach(result => {
 
 startApp()  
 
+
+//Logout
+ const logoutButon = document.querySelector('#logout')
+
+logoutButon.addEventListener('click', async () => {
+  await signOut(auth)
+  window.location.href = 'http://localhost:5500/index.html'
+
+
+})
