@@ -6,6 +6,10 @@ import { signOut } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth
 const localStorageKey = "bookGenre";
 
 async function getData2 () {
+    /**
+     * Corrección
+     * Según este flujo, siempre llamas a la api, nunca consumes los datos del localStorage
+     */
     let list = localStorage.getItem(localStorageKey);
     try {
         const response = await fetch(`https://api.nytimes.com/svc/books/v3/lists/${localStorage.getItem(localStorageKey)}.json?api-key=FZi6T0tvXiCmPowsTGjVWaT4r0XgcVnw`)

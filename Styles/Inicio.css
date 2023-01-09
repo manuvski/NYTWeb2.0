@@ -1,4 +1,8 @@
-body{ 
+/*
+Corrección
+Debemos ordenar el contenido de los estilos por orden alfabético
+*/
+body{
     background-image: url('../Assets/collage.png');
     opacity:.95;
     width: 100vw;
