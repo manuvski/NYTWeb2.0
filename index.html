@@ -16,6 +16,11 @@
 </head>
 <body>
 
+        <!--
+           --CORRECCIÓN--
+           Tienes duplicados muchos IDs, esto es peligroso a la hora de manejar el DOM
+         -->
+
   <nav class="menu">
 
     <div class="container">
@@ -69,6 +74,10 @@
         </div>
         <div class="modal-body">
             <form id="login-form">
+                <!--
+                   --CORRECCIÓN--
+                   El parámetro "for" de la etiqueta label debe estar asociado al parámetro "id" del input
+                 -->
                 <label for="email">Email:</label>
                 <input type="email" id="login-email" class="form-control mb-3" placeholder="Email" required>
                 <label for="password">Password:</label>

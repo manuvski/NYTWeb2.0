@@ -21,6 +21,10 @@ async function getData () {
             localStorage.setItem(localStorageKey, JSON.stringify(results))
             list = results
         }
+        /**
+         * Corrección
+         * Esta varibale no existe
+         */
         bool = true
         
     }
@@ -42,7 +46,10 @@ booksData.forEach(result => {
    
     const ourData = {name: result.list_name, old: result.oldest_published_date,new: result.newest_published_date, update: result.updated}
 
-    
+    /**
+     * Corrección
+     * Console.log sobra
+     */
     console.log(ourData.url)
     const cardELEM = document.createElement("div")
     cardELEM.setAttribute("id","card");
@@ -91,6 +98,10 @@ startApp()
 
 logoutButon.addEventListener('click', async () => {
   await signOut(auth)
+    /**
+     * Corrección
+     * Al añadir ese puerto sin una variable de entorno rompe la navegación
+     */
   window.location.href = 'http://localhost:5500/index.html'
 
 

@@ -21,6 +21,10 @@ signupForm.addEventListener('submit', async (e) =>{
     
 try {
     const userData = await createUserWithEmailAndPassword(auth, email, password)
+    /**
+     * Corrección
+     * Console.log sobra
+     */
     console.log(userData)
     const signupModal = document.querySelector('#signupModal')
     const modal = bootstrap.Modal.getInstance(signupModal)
@@ -28,6 +32,10 @@ try {
     window.location.href = '../Views/dashboard.html'
     
 } catch (error) {
+    /**
+     * Corrección
+     * En este caso es mejor usar un Switch
+     */
        if (error.code === 'auth/weak-password') {
         alert('Contraseña demasiado débil')
     } else if (error.code === 'auth/invalid-email') {
@@ -58,6 +66,10 @@ onAuthStateChanged(auth, async (user) => {
         loginButon.forEach(link => link.style.display = 'none')
         logoutButon2.forEach(link => link.style.display = 'inherit')
         const email = user.email
+        /**
+         * Corrección
+         * Console.log sobra
+         */
         console.log(email)
         const emailInfo = document.querySelector('#emailInfo')
         emailInfo.innerHTML = email
@@ -85,6 +97,10 @@ signinForm.addEventListener('submit', async (e) =>{
     
 try {
     const userData = await signInWithEmailAndPassword(auth, email, password)
+    /**
+     * Corrección
+     * Console.log sobra
+     */
     console.log(userData)
     const signinModal = document.querySelector('#signinModal')
     const modal = bootstrap.Modal.getInstance(signinModal)
@@ -92,6 +108,10 @@ try {
    
 
 } catch (error) {
+    /**
+     * Corrección
+     * En este caso es mejor usar un Switch
+     */
     console.log(error)
        if (error.code === 'auth/wrong-password') {
         alert('Contraseña incorrecta')
@@ -106,12 +126,20 @@ try {
 //Metodo para el inicio de sesion con Google
 const provider = new GoogleAuthProvider();
 const googlebutton = document.querySelector('#googleSigninButton')
+/**
+ * Corrección
+ * Esa variable no se usa
+ */
 const googlelogin = document.getElementById('signinModal')
 googlebutton.addEventListener('click', async (e) =>{
 e.preventDefault()
 
 try {
  const credentials = await signInWithPopup(auth, provider)
+    /**
+     * Corrección
+     * Console.log sobra
+     */
     console.log(credentials)
     const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'))
     modal.hide()
@@ -130,6 +158,10 @@ facebookbutton.addEventListener('click', async (e) =>{
 e.preventDefault()
 try {
  const credentials = await signInWithPopup(auth, facebookProvider)
+    /**
+     * Corrección
+     * Console.log sobra
+     */
     console.log(credentials)
     const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'))
     modal.hide()
@@ -148,6 +180,10 @@ githubbutton.addEventListener('click', async (e) =>{
 e.preventDefault()
 try {
  const credentials = await signInWithPopup(auth, githubProvider)
+    /**
+     * Corrección
+     * Console.log sobra
+     */
     console.log(credentials)
     const modal = bootstrap.Modal.getInstance(document.querySelector('#signinModal'))
     modal.hide()
